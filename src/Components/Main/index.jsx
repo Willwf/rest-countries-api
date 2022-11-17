@@ -1,9 +1,12 @@
 import * as Styles from "./styles";
 import usFlag from "../../assets/us-flag.jpg";
+import { Selector } from "../Selector";
 
 export function Main() {
   return (
     <Styles.Main>
+      <Selector>Filter by Region</Selector>
+
       <Styles.CountryCard>
         <Styles.FlagImg src={usFlag} />
         <Styles.Info>
