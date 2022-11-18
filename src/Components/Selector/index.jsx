@@ -10,8 +10,8 @@ export function Selector() {
   }
 
   function selectRegion(event) {
-    console.log(event);
     setRegionSelected(event.target.innerText);
+    setOpenOptions(!openOptions);
   }
 
   return (
