@@ -1,11 +1,26 @@
+import { useState } from "react";
 import * as Styles from "./styles";
 
-export function Selector(children) {
+export function Selector() {
+  const [openOptions, setOpenOptions] = useState(false);
+  const [regionSelected, setRegionSelected] = useState("");
+
+  function toggleOptions() {
+    setOpenOptions(!openOptions);
+  }
+
+  function selectRegion(event) {
+    console.log(event);
+    setRegionSelected(event.target.innerText);
+  }
+
   return (
     <Styles.SelectorElement>
-      <Styles.Selector>
+      <Styles.Selector onClick={toggleOptions}>
         <div>
-          <Styles.Title>{children.children}</Styles.Title>
+          <Styles.Title>
+            {regionSelected ? regionSelected : "Filter by Region"}
+          </Styles.Title>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="ionicon"
@@ -23,19 +38,24 @@ export function Selector(children) {
           </svg>
         </div>
       </Styles.Selector>
-      <OptionsMenu />
+      <OptionsMenu
+        className={openOptions ? "" : "hidden"}
+        selectRegion={selectRegion}
+      />
     </Styles.SelectorElement>
   );
 }
 
-function OptionsMenu() {
+function OptionsMenu(props) {
+  const regions = ["Africa", "America", "Asia", "Europe", "Oceania"];
+
   return (
-    <Styles.OptionMenu>
-      <Styles.Option>Africa</Styles.Option>
-      <Styles.Option>Americas</Styles.Option>
-      <Styles.Option>Asia</Styles.Option>
-      <Styles.Option>Europe</Styles.Option>
-      <Styles.Option>Oceania</Styles.Option>
+    <Styles.OptionMenu className={props.className}>
+      {regions.map((region) => (
+        <Styles.Option key={region} onClick={props.selectRegion}>
+          {region}
+        </Styles.Option>
+      ))}
     </Styles.OptionMenu>
   );
 }

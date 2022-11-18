@@ -58,6 +58,10 @@ export const OptionMenu = styled.div`
   background-color: ${colors.white};
 
   box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 10%);
+
+  &.hidden {
+    display: none;
+  }
 `;
 
 export const Option = styled.p`
@@ -65,4 +69,8 @@ export const Option = styled.p`
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+
+  &:hover {
+    background-color: ${colors.veryLightGray};
+  }
 `;

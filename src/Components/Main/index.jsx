@@ -5,7 +5,7 @@ import { Selector } from "../Selector";
 export function Main() {
   return (
     <Styles.Main>
-      <Selector>Filter by Region</Selector>
+      <Selector />
 
       <Styles.CountryCard>
         <Styles.FlagImg src={usFlag} />
