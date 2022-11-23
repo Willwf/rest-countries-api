@@ -44,7 +44,6 @@ export const OptionMenu = styled.div`
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  margin-left: 1.5rem;
   gap: 0.5rem;
 
   position: absolute;
