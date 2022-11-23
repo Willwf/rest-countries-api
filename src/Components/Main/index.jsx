@@ -1,10 +1,12 @@
 import * as Styles from "./styles";
 import usFlag from "../../assets/us-flag.jpg";
 import { Selector } from "../Selector";
+import { SearchInput } from "../SearchInput";
 
 export function Main() {
   return (
     <Styles.Main>
+      <SearchInput />
       <Selector />
 
       <Styles.CountryCard>

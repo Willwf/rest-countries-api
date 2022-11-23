@@ -18,7 +18,6 @@ export const Selector = styled.div`
   display: flex;
   align-items: center;
   align-self: flex-start;
-  margin: 3rem 0 0 1.5rem;
   cursor: pointer;
 
   border: none;
