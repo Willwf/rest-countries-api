@@ -1,20 +1,20 @@
 import * as Styles from "./styles";
 import usFlag from "../../assets/us-flag.jpg";
 
-export function CountryCard() {
+export function CountryCard({ countryData }) {
   return (
     <Styles.CountryCard>
-      <Styles.FlagImg src={usFlag} />
+      <Styles.FlagImg src={countryData.flags.svg} alt={countryData.flags.alt} />
       <Styles.Info>
-        <Styles.Title>United States of America</Styles.Title>
+        <Styles.Title>{countryData.name.common}</Styles.Title>
         <Styles.InfoData>
-          <span>Population:</span> 323,947,000
+          <span>Population:</span> {countryData.population}
         </Styles.InfoData>
         <Styles.InfoData>
-          <span>Region:</span> Americas
+          <span>Region:</span> {countryData.region}
         </Styles.InfoData>
         <Styles.InfoData>
-          <span>Capital:</span> Washington, D.C.
+          <span>Capital:</span> {countryData.capital}
         </Styles.InfoData>
       </Styles.Info>
     </Styles.CountryCard>
