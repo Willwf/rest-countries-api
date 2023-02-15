@@ -1,5 +1,4 @@
 import * as Styles from "./styles";
-import usFlag from "../../assets/us-flag.jpg";
 
 export function CountryCard({ countryData }) {
   return (
