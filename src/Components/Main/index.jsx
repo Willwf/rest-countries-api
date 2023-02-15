@@ -4,12 +4,22 @@ import { SearchInput } from "../SearchInput";
 import { CountryCard } from "../CountryCard";
 
 import { useQuery } from "react-query";
+import { useState } from "react";
 
 export function Main() {
-  const { data, isLoading, error } = useQuery("myData", async () => {
-    const response = await fetch("https://restcountries.com/v3.1/all");
-    return response.json();
-  });
+  const [regionSelected, setRegionSelected] = useState("");
+
+  const { data, isLoading, error } = useQuery(
+    ["countriesData", regionSelected],
+    async () => {
+      const response = await fetch(
+        `https://restcountries.com/v3.1/${
+          !regionSelected ? "all" : "region/" + regionSelected
+        }`
+      );
+      return response.json();
+    }
+  );
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -22,7 +32,10 @@ export function Main() {
   return (
     <Styles.Main>
       <SearchInput />
-      <Selector />
+      <Selector
+        regionSelected={regionSelected}
+        setRegionSelected={setRegionSelected}
+      />
 
       {data.map((countryData) => {
         return <CountryCard key={countryData.cca3} countryData={countryData} />;

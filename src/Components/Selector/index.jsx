@@ -1,9 +1,8 @@
 import { useState } from "react";
 import * as Styles from "./styles";
 
-export function Selector() {
+export function Selector({ regionSelected, setRegionSelected }) {
   const [openOptions, setOpenOptions] = useState(false);
-  const [regionSelected, setRegionSelected] = useState("");
 
   function toggleOptions() {
     setOpenOptions(!openOptions);

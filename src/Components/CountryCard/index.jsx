@@ -7,7 +7,7 @@ export function CountryCard({ countryData }) {
       <Styles.Info>
         <Styles.Title>{countryData.name.common}</Styles.Title>
         <Styles.InfoData>
-          <span>Population:</span> {countryData.population}
+          <span>Population:</span> {countryData.population.toLocaleString()}
         </Styles.InfoData>
         <Styles.InfoData>
           <span>Region:</span> {countryData.region}
