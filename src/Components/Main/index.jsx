@@ -8,15 +8,34 @@ import { useState } from "react";
 
 export function Main() {
   const [regionSelected, setRegionSelected] = useState("");
+  const [countrySearched, setCountrySearched] = useState("");
+  const [urlToFetch, setUrlToFetch] = useState("");
+
+  const createUrlToFetch = (regionSelected, countrySearched) => {
+    if (regionSelected) {
+      const regionParameters = `region/${regionSelected}`;
+      return regionParameters;
+    }
+
+    if (countrySearched) {
+      const countryNameParameters = `name/${countrySearched}`;
+      return countryNameParameters;
+    }
+
+    return "all";
+  };
+
+  const baseUrl = `https://restcountries.com/v3.1/${createUrlToFetch(
+    regionSelected,
+    countrySearched
+  )}`;
+
+  console.log(createUrlToFetch(regionSelected, countrySearched));
 
   const { data, isLoading, error } = useQuery(
-    ["countriesData", regionSelected],
+    ["countriesData", regionSelected, countrySearched],
     async () => {
-      const response = await fetch(
-        `https://restcountries.com/v3.1/${
-          !regionSelected ? "all" : "region/" + regionSelected
-        }`
-      );
+      const response = await fetch(baseUrl);
       return response.json();
     }
   );
@@ -31,7 +50,7 @@ export function Main() {
 
   return (
     <Styles.Main>
-      <SearchInput />
+      <SearchInput setCountrySearched={setCountrySearched} />
       <Selector
         regionSelected={regionSelected}
         setRegionSelected={setRegionSelected}
