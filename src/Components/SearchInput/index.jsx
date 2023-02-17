@@ -1,6 +1,21 @@
 import * as Styles from "./styles";
 
-export function SearchInput() {
+import { useForm } from "@mantine/form";
+
+export function SearchInput({ setCountrySearched }) {
+  const form = useForm({
+    initialValues: {
+      searchCountry: "",
+    },
+    validate: {
+      searchCountry: (value) => value.length === 0,
+    },
+  });
+
+  function handleSubmit(values) {
+    setCountrySearched(values.searchCountry);
+  }
+
   return (
     <Styles.SearchInputBox>
       <Styles.SearchIcon>
@@ -27,10 +42,14 @@ export function SearchInput() {
           />
         </svg>
       </Styles.SearchIcon>
-      <Styles.SearchInput
-        type="search"
-        placeholder="Search for a country..."
-      ></Styles.SearchInput>
+      <form onSubmit={form.onSubmit(handleSubmit)}>
+        <Styles.SearchInput
+          type="search"
+          name="searchCountry"
+          placeholder="Search for a country..."
+          {...form.getInputProps("searchCountry")}
+        />
+      </form>
     </Styles.SearchInputBox>
   );
 }
