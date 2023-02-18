@@ -2,7 +2,7 @@ import * as Styles from "./styles";
 
 import { useForm } from "@mantine/form";
 
-export function SearchInput({ setCountrySearched }) {
+export function SearchInput({ setCountrySearched, setRegionSelected }) {
   const form = useForm({
     initialValues: {
       searchCountry: "",
@@ -13,6 +13,7 @@ export function SearchInput({ setCountrySearched }) {
   });
 
   function handleSubmit(values) {
+    setRegionSelected("");
     setCountrySearched(values.searchCountry);
   }
 

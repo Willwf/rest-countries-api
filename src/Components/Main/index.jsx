@@ -50,7 +50,10 @@ export function Main() {
 
   return (
     <Styles.Main>
-      <SearchInput setCountrySearched={setCountrySearched} />
+      <SearchInput
+        setCountrySearched={setCountrySearched}
+        setRegionSelected={setRegionSelected}
+      />
       <Selector
         regionSelected={regionSelected}
         setRegionSelected={setRegionSelected}
