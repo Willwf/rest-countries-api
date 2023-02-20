@@ -60,9 +60,11 @@ export function DetailsCard() {
             Border Countries:
           </Styles.BorderCountriesTitle>
           <Styles.BorderCountriesCard>
-            <Styles.BorderCountries>France</Styles.BorderCountries>
-            <Styles.BorderCountries>Germany</Styles.BorderCountries>
-            <Styles.BorderCountries>Netherlands</Styles.BorderCountries>
+            <Styles.BorderCountriesButton>France</Styles.BorderCountriesButton>
+            <Styles.BorderCountriesButton>Germany</Styles.BorderCountriesButton>
+            <Styles.BorderCountriesButton>
+              Netherlands
+            </Styles.BorderCountriesButton>
           </Styles.BorderCountriesCard>
         </div>
       </Styles.CountryInfoCard>

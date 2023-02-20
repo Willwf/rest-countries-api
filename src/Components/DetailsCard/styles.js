@@ -78,11 +78,7 @@ export const BorderCountriesCard = styled.div`
   margin: 2vh 0 5vh 0;
   gap: 2vh;
 `;
-export const BorderCountries = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+export const BorderCountriesButton = styled.button`
   flex: 0 0 30%;
 
   min-height: 4vh;
