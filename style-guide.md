@@ -23,7 +23,7 @@ The designs were created to the following widths:
 ### Body Copy
 
 - Homepage Items: 14px
-- Detail Page: 16px 
+- Detail Page: 16px
 
 ### Fonts
 
@@ -36,6 +36,7 @@ For the icons, you can use a font icon library. Don't worry if the icons that yo
 
 Some suggestions can be found below:
 
+- [Ionicons](https://ionicons.com) (This One)
+
 - [Font Awesome](https://fontawesome.com)
 - [IcoMoon](https://icomoon.io)
-- [Ionicons](https://ionicons.com)
