@@ -69,5 +69,29 @@ export const BorderCountriesTitle = styled.p`
   font-size: 1.4rem;
   font-weight: bold;
 `;
-export const BorderCountriesCard = styled.div``;
-export const BorderCountriesButton = styled.button``;
+export const BorderCountriesCard = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin: 2vh 0 5vh 0;
+  gap: 2vh;
+`;
+export const BorderCountries = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex: 0 0 30%;
+
+  min-height: 4vh;
+
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
+
+  box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 40%);
+  border: none;
+
+  background-color: ${colors.white};
+`;
