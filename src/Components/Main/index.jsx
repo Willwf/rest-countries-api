@@ -2,6 +2,7 @@ import * as Styles from "./styles";
 import { Selector } from "../Selector";
 import { SearchInput } from "../SearchInput";
 import { CountryCard } from "../CountryCard";
+import { LoadingElement } from "../LoadingElement";
 
 import { useQuery } from "react-query";
 import { useState } from "react";
@@ -9,7 +10,6 @@ import { useState } from "react";
 export function Main() {
   const [regionSelected, setRegionSelected] = useState("");
   const [countrySearched, setCountrySearched] = useState("");
-  const [urlToFetch, setUrlToFetch] = useState("");
 
   const createUrlToFetch = (regionSelected, countrySearched) => {
     if (regionSelected) {
@@ -30,8 +30,6 @@ export function Main() {
     countrySearched
   )}`;
 
-  console.log(createUrlToFetch(regionSelected, countrySearched));
-
   const { data, isLoading, error } = useQuery(
     ["countriesData", regionSelected, countrySearched],
     async () => {
@@ -41,7 +39,7 @@ export function Main() {
   );
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <LoadingElement />;
   }
 
   if (error) {
