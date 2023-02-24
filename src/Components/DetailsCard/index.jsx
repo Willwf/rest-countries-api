@@ -1,11 +1,13 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
+import { useNavigate } from "react-router-dom";
 
 import { LoadingElement } from "../LoadingElement";
 import * as Styles from "./styles";
 
 export function DetailsCard() {
   const { countryId } = useParams();
+  const navigate = useNavigate();
 
   const { data, isLoading, error } = useQuery(
     "selectedCountryData",
@@ -25,9 +27,13 @@ export function DetailsCard() {
     return <div>Error: {error.message}</div>;
   }
 
+  function handleClick(event) {
+    navigate("/");
+  }
+
   return (
     <Styles.DetailsCard>
-      <Styles.BackButton>
+      <Styles.BackButton onClick={handleClick}>
         <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"

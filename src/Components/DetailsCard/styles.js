@@ -37,6 +37,14 @@ export const BackButton = styled.button`
     width: 1.3rem;
     margin-right: 0.8rem;
   }
+
+  &:hover {
+    opacity: 80%;
+  }
+
+  &:active {
+    opacity: 70%;
+  }
 `;
 export const FlagImg = styled.img`
   width: 85%;
