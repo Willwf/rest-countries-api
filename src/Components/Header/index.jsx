@@ -1,9 +1,13 @@
 import * as Styles from "./styles";
+import { Link } from "react-router-dom";
 
 export function Header() {
   return (
     <Styles.Header>
-      <Styles.Title>Where in the world?</Styles.Title>
+      <Link to="/" className="homeTitle">
+        <Styles.Title>Where in the world?</Styles.Title>
+      </Link>
+
       <Styles.Button>
         <span>
           <svg

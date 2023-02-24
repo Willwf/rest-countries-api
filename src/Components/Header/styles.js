@@ -8,6 +8,11 @@ export const Header = styled.header`
   padding: 2.5rem 1.5rem;
 
   box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 10%);
+
+  .homeTitle {
+    color: black;
+    text-decoration: none;
+  }
 `;
 export const Title = styled.h1`
   font-family: "Nunito Sans", sans-serif;
