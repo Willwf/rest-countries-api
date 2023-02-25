@@ -3,17 +3,20 @@ import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 
 import { LoadingElement } from "../LoadingElement";
+import { BorderCountryButton } from "../BorderCountryButton";
 import * as Styles from "./styles";
+import { useState } from "react";
 
 export function DetailsCard() {
   const { countryId } = useParams();
+  const [countryIdState, setCountryIdState] = useState(countryId);
   const navigate = useNavigate();
 
   const { data, isLoading, error } = useQuery(
-    "selectedCountryData",
+    ["selectedCountryData", countryIdState],
     async () => {
       const response = await fetch(
-        `https://restcountries.com/v3.1/alpha/${countryId}`
+        `https://restcountries.com/v3.1/alpha/${countryIdState}`
       );
       return response.json();
     }
@@ -27,7 +30,7 @@ export function DetailsCard() {
     return <div>Error: {error.message}</div>;
   }
 
-  function handleClick(event) {
+  function handleClick() {
     navigate("/");
   }
 
@@ -104,18 +107,30 @@ export function DetailsCard() {
               .join(", ")}
           </Styles.Info>
         </div>
-        <div>
-          <Styles.BorderCountriesTitle>
-            Border Countries:
-          </Styles.BorderCountriesTitle>
-          <Styles.BorderCountriesCard>
-            <Styles.BorderCountriesButton>France</Styles.BorderCountriesButton>
-            <Styles.BorderCountriesButton>Germany</Styles.BorderCountriesButton>
-            <Styles.BorderCountriesButton>
-              Netherlands
-            </Styles.BorderCountriesButton>
-          </Styles.BorderCountriesCard>
-        </div>
+
+        {data[0].borders ? (
+          <div>
+            <Styles.BorderCountriesTitle>
+              Border Countries:
+            </Styles.BorderCountriesTitle>
+            <Styles.BorderCountriesCard>
+              <BorderCountryButton
+                borderCountries={data[0].borders}
+                setCountryIdState={setCountryIdState}
+              />
+              {/* {data[0].borders.map((borderCountry) => {
+                return (
+                  <BorderCountryButton
+                    key={borderCountry}
+                    borderCountry={borderCountry}
+                  />
+                );
+              })} */}
+            </Styles.BorderCountriesCard>
+          </div>
+        ) : (
+          ""
+        )}
       </Styles.CountryInfoCard>
     </Styles.DetailsCard>
   );

@@ -72,6 +72,7 @@ export const Info = styled.p`
     font-weight: bold;
   }
 `;
+
 export const BorderCountriesTitle = styled.p`
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.4rem;
@@ -85,17 +86,4 @@ export const BorderCountriesCard = styled.div`
 
   margin: 2vh 0 5vh 0;
   gap: 2vh;
-`;
-export const BorderCountriesButton = styled.button`
-  flex: 0 0 30%;
-
-  min-height: 4vh;
-
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 1rem;
-
-  box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 40%);
-  border: none;
-
-  background-color: ${colors.white};
 `;

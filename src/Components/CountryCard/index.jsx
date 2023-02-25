@@ -6,6 +6,7 @@ export function CountryCard({ countryData }) {
 
   function handleClick(event) {
     navigate(`/details/${event.currentTarget.id}`);
+    navigate(0);
   }
 
   return (
