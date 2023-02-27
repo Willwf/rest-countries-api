@@ -6,7 +6,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshots)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -36,14 +36,10 @@ In construction...
 
 ### Links
 
-- Solution URL: [https://github.com/Willwf/url-shortening-api-page](https://github.com/Willwf/url-shortening-api-page)
+- Solution URL: [https://github.com/Willwf/rest-countries-api](https://github.com/Willwf/rest-countries-api)
 <!-- - Live Site URL: [Add live site URL here](https://your-live-site-url.com) -->
 
 ## My process
-
-```
-In construction...
-```
 
 ### Built with
 
@@ -53,8 +49,13 @@ In construction...
 - [React](https://reactjs.org/) - JS library
 - [Styled Components](https://styled-components.com/) - For styles
 - [Vite.js](https://vitejs.dev/) - Bundler JS
+- [React Router](https://reactrouter.com/) - Component for Client Side Routing
+- [React Query](https://react-query-v3.tanstack.com/) - Hooks for fetching, caching and updating asynchronous data in React
+- [Mantine](https://mantine.dev/) - React components Library
 
 ### What I learned
+
+This was a challenging experience because I was able to use many new techniques that I hadn't used before. I tried to always use something new to solve a problem or to accomplish a task in a different way than I had before. Only to feel challenged and expand my knowledge. Even while doing simple things that I previously took for granted, I sometimes got stuck for hours before discovering that just one line of code would solve the problem. It's always interesting to use new techniques in programming.
 
 ```
 In construction...
@@ -68,12 +69,7 @@ In construction...
 
 ### Useful resources
 
-<!-- - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept. -->
-
-```
-In construction...
-```
+- [ChatGPT](https://openai.com/blog/chatgpt/) - This helped me to discover and use a lot of things that I was not used to. Even when I got some wrong responses or out of date information, I was able to extract something that helped me to finish or advance in a feature. It's an amazing tool for a student when used well.
 
 ## Author
 
