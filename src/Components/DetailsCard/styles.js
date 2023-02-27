@@ -48,6 +48,8 @@ export const BackButton = styled.button`
 `;
 export const FlagImg = styled.img`
   width: 85%;
+
+  box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 40%);
 `;
 export const CountryInfoCard = styled.div`
   display: flex;

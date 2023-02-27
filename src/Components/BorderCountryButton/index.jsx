@@ -22,8 +22,6 @@ export function BorderCountryButton({ borderCountries, setCountryIdState }) {
     return <div>Error: {error.message}</div>;
   }
 
-  console.log(data);
-
   function openCountryDetailsPage(event) {
     setCountryIdState(event.currentTarget.id);
     navigate(`/details/${event.currentTarget.id}`);

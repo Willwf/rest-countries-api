@@ -88,7 +88,7 @@ export function DetailsCard() {
         <div>
           <Styles.Info>
             <span>Top Level Domain: </span>
-            {data[0].tld[0]}
+            {data[0]?.tld ? data[0]?.tld[0] : ""}
           </Styles.Info>
           <Styles.Info>
             <span>Currencies: </span>
