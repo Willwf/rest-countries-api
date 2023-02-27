@@ -7,6 +7,8 @@ export const DetailsCard = styled.div`
   justify-content: center;
   align-items: center;
   gap: 6vh;
+
+  background-color: ${(props) => props.theme.body};
 `;
 export const BackButton = styled.button`
   display: flex;
@@ -27,7 +29,8 @@ export const BackButton = styled.button`
   box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 40%);
   border: none;
 
-  background-color: ${colors.white};
+  background-color: ${(props) => props.theme.element};
+  color: ${(props) => props.theme.text};
 
   span svg {
     display: flex;
@@ -62,11 +65,12 @@ export const CountryInfoCard = styled.div`
 export const CountryName = styled.h1`
   font-family: "Nunito Sans", sans-serif;
   font-size: 2.2rem;
+  color: ${(props) => props.theme.text};
 `;
 export const Info = styled.p`
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.3rem;
-  color: ${colors.veryDarkBlueText};
+  color: ${(props) => props.theme.text};
 
   margin-bottom: 0.5rem;
 
@@ -79,6 +83,7 @@ export const BorderCountriesTitle = styled.p`
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.4rem;
   font-weight: bold;
+  color: ${(props) => props.theme.text};
 `;
 export const BorderCountriesCard = styled.div`
   display: flex;

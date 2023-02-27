@@ -9,6 +9,8 @@ export const Header = styled.header`
 
   box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 10%);
 
+  background-color: ${(props) => props.theme.element};
+
   .homeTitle {
     color: black;
     text-decoration: none;
@@ -17,6 +19,7 @@ export const Header = styled.header`
 export const Title = styled.h1`
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.4rem;
+  color: ${(props) => props.theme.text};
 `;
 export const Button = styled.button`
   display: flex;
@@ -32,12 +35,15 @@ export const Button = styled.button`
 
   cursor: pointer;
 
-  span svg {
+  span {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: ${(props) => props.theme.text};
 
-    width: 1.7rem;
-    margin-right: 1rem;
+    svg {
+      width: 1.7rem;
+      margin-right: 0.8rem;
+    }
   }
 `;

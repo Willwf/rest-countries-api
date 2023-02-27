@@ -15,3 +15,15 @@ export const veryLightGray = "hsl(0, 0%, 98%)";
 
 // Dark Mode Text & Light Mode Elements
 export const white = "hsl(0, 0%, 100%)";
+
+export const lightTheme = {
+  body: veryLightGray,
+  text: veryDarkBlueText,
+  element: white,
+};
+
+export const darkTheme = {
+  body: veryDarkBlueBackground,
+  text: white,
+  element: darkBlue,
+};

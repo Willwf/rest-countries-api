@@ -5,6 +5,8 @@ export const LoadingElement = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  // background-color: ${(props) => props.theme.body};
 `;
 export const LoadingText = styled.p`
   font-family: "Nunito Sans", sans-serif;
@@ -12,4 +14,6 @@ export const LoadingText = styled.p`
   font-weight: bold;
 
   margin-top: 30vh;
+
+  // color: ${(props) => props.theme.text};
 `;

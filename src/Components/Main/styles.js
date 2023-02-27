@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import * as colors from "../../styles/variables";
+// import * as colors from "../../styles/variables";
 
 export const Main = styled.main`
   display: flex;
@@ -10,5 +10,5 @@ export const Main = styled.main`
 
   gap: 6vh;
 
-  background-color: ${colors.veryLightGray};
+  background-color: ${(props) => props.theme.body};
 `;

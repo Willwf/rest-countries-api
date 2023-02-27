@@ -25,7 +25,8 @@ export const Selector = styled.div`
   width: 36vw;
   height: 4rem;
   padding: 0 1.5rem;
-  background-color: ${colors.white};
+  background-color: ${(props) => props.theme.element};
+  color: ${(props) => props.theme.text};
 
   box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 10%);
 
@@ -53,7 +54,8 @@ export const OptionMenu = styled.div`
   border-radius: 0.5rem;
   width: 36vw;
   padding: 1rem 1.5rem;
-  background-color: ${colors.white};
+  background-color: ${(props) => props.theme.element};
+  color: ${(props) => props.theme.text};
 
   box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 10%);
 
@@ -69,6 +71,7 @@ export const Option = styled.p`
   cursor: pointer;
 
   &:hover {
-    background-color: ${colors.veryLightGray};
+    background-color: ${(props) => props.theme.element};
+    color: ${(props) => props.theme.text};
   }
 `;

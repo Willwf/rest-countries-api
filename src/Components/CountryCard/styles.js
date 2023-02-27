@@ -6,11 +6,12 @@ export const CountryCard = styled.div`
   border-radius: 0.5rem;
   box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 10%);
 
-  background-color: ${colors.white};
+  background-color: ${(props) => props.theme.element};
 `;
 
 export const FlagImg = styled.img`
   width: 100%;
+  border-radius: 0.5rem 0.5rem 0 0;
 `;
 
 export const Info = styled.div`
@@ -21,13 +22,15 @@ export const Title = styled.h1`
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.7rem;
 
+  color: ${(props) => props.theme.text};
+
   margin-bottom: 1rem;
 `;
 
 export const InfoData = styled.p`
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.3rem;
-  color: ${colors.veryDarkBlueText};
+  color: ${(props) => props.theme.text};
 
   margin-bottom: 0.5rem;
 

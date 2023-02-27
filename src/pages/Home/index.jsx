@@ -2,10 +2,10 @@ import { Header } from "../../Components/Header";
 
 import { Outlet } from "react-router-dom";
 
-export function Home() {
+export function Home({ isDarkMode, setIsDarkMode }) {
   return (
     <>
-      <Header />
+      <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <Outlet />
     </>
   );
