@@ -1,10 +1,11 @@
-import { Home } from "./pages/Home";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ThemeProvider } from "styled-components";
-import { useState } from "react";
 
-import { lightTheme, darkTheme } from "./styles/variables";
+import { useState } from "react";
 import { useEffect } from "react";
+
+import { Home } from "./pages/Home";
+import { lightTheme, darkTheme } from "./styles/variables";
 
 export function App() {
   const queryClient = new QueryClient();
@@ -16,10 +17,6 @@ export function App() {
   useEffect(() => {
     localStorage.setItem("darkMode", isDarkMode);
   }, [isDarkMode]);
-
-  // if (!!savedTheme) {
-  //   setIsDarkMode(savedTheme);
-  // }
 
   return (
     <QueryClientProvider client={queryClient}>

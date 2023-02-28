@@ -15,6 +15,10 @@ export const Header = styled.header`
     color: black;
     text-decoration: none;
   }
+
+  @media (min-width: 768px) {
+    padding: 2.5rem 6rem;
+  }
 `;
 export const Title = styled.h1`
   font-family: "Nunito Sans", sans-serif;

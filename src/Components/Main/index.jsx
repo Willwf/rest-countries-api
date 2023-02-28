@@ -48,14 +48,16 @@ export function Main() {
 
   return (
     <Styles.Main>
-      <SearchInput
-        setCountrySearched={setCountrySearched}
-        setRegionSelected={setRegionSelected}
-      />
-      <Selector
-        regionSelected={regionSelected}
-        setRegionSelected={setRegionSelected}
-      />
+      <Styles.SearchElements>
+        <SearchInput
+          setCountrySearched={setCountrySearched}
+          setRegionSelected={setRegionSelected}
+        />
+        <Selector
+          regionSelected={regionSelected}
+          setRegionSelected={setRegionSelected}
+        />
+      </Styles.SearchElements>
 
       {data.map((countryData) => {
         return <CountryCard key={countryData.cca3} countryData={countryData} />;
