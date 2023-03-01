@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 export function Header({ isDarkMode, setIsDarkMode }) {
   const toggleTheme = () => {
-    console.log(isDarkMode);
     setIsDarkMode(!isDarkMode);
   };
 

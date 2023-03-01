@@ -56,82 +56,84 @@ export function DetailsCard() {
         </span>
         Back
       </Styles.BackButton>
-      <Styles.FlagImg src={data[0].flags.svg} alt={data[0].flags.alt} />
-      <Styles.CountryInfoCard>
-        <Styles.CountryName>{data[0].name.common}</Styles.CountryName>
-        <div>
-          <Styles.Info>
-            <span>Native Name: </span>
-            {
-              Object.keys(data[0].name.nativeName).map((name) => {
-                return data[0].name.nativeName[name].common;
-              })[0]
-            }
-          </Styles.Info>
-          <Styles.Info>
-            <span>Population: </span>
-            {data[0].population.toLocaleString()}
-          </Styles.Info>
-          <Styles.Info>
-            <span>Region: </span>
-            {data[0].region}
-          </Styles.Info>
-          <Styles.Info>
-            <span>Sub Region: </span>
-            {data[0].subregion}
-          </Styles.Info>
-          <Styles.Info>
-            <span>Capital: </span>
-            {data[0].capital}
-          </Styles.Info>
-        </div>
-        <div>
-          <Styles.Info>
-            <span>Top Level Domain: </span>
-            {data[0]?.tld ? data[0]?.tld[0] : ""}
-          </Styles.Info>
-          <Styles.Info>
-            <span>Currencies: </span>
-            {Object.keys(data[0].currencies)
-              .map((currency) => {
-                return data[0].currencies[currency].name;
-              })
-              .join(", ")}
-          </Styles.Info>
-          <Styles.Info>
-            <span>Languages: </span>
-            {Object.keys(data[0].languages)
-              .map((language) => {
-                return data[0].languages[language];
-              })
-              .join(", ")}
-          </Styles.Info>
-        </div>
-
-        {data[0].borders ? (
+      <Styles.CountryDetails>
+        <Styles.FlagImg src={data[0].flags.svg} alt={data[0].flags.alt} />
+        <Styles.CountryInfoCard>
+          <Styles.CountryName>{data[0].name.common}</Styles.CountryName>
           <div>
-            <Styles.BorderCountriesTitle>
-              Border Countries:
-            </Styles.BorderCountriesTitle>
-            <Styles.BorderCountriesCard>
-              <BorderCountryButton
-                borderCountries={data[0].borders}
-                setCountryIdState={setCountryIdState}
-              />
-              {/* {data[0].borders.map((borderCountry) => {
-                return (
-                  <BorderCountryButton
-                    key={borderCountry}
-                    borderCountry={borderCountry}
-                  />
-                );
-              })} */}
-            </Styles.BorderCountriesCard>
+            <Styles.Info>
+              <span>Native Name: </span>
+              {
+                Object.keys(data[0].name.nativeName).map((name) => {
+                  return data[0].name.nativeName[name].common;
+                })[0]
+              }
+            </Styles.Info>
+            <Styles.Info>
+              <span>Population: </span>
+              {data[0].population.toLocaleString()}
+            </Styles.Info>
+            <Styles.Info>
+              <span>Region: </span>
+              {data[0].region}
+            </Styles.Info>
+            <Styles.Info>
+              <span>Sub Region: </span>
+              {data[0].subregion}
+            </Styles.Info>
+            <Styles.Info>
+              <span>Capital: </span>
+              {data[0].capital}
+            </Styles.Info>
           </div>
-        ) : (
-          ""
-        )}
-      </Styles.CountryInfoCard>
+          <div>
+            <Styles.Info>
+              <span>Top Level Domain: </span>
+              {data[0]?.tld ? data[0]?.tld[0] : ""}
+            </Styles.Info>
+            <Styles.Info>
+              <span>Currencies: </span>
+              {Object.keys(data[0].currencies)
+                .map((currency) => {
+                  return data[0].currencies[currency].name;
+                })
+                .join(", ")}
+            </Styles.Info>
+            <Styles.Info>
+              <span>Languages: </span>
+              {Object.keys(data[0].languages)
+                .map((language) => {
+                  return data[0].languages[language];
+                })
+                .join(", ")}
+            </Styles.Info>
+          </div>
+
+          {data[0].borders ? (
+            <div>
+              <Styles.BorderCountriesTitle>
+                Border Countries:
+              </Styles.BorderCountriesTitle>
+              <Styles.BorderCountriesCard>
+                <BorderCountryButton
+                  borderCountries={data[0].borders}
+                  setCountryIdState={setCountryIdState}
+                />
+                {/* {data[0].borders.map((borderCountry) => {
+                  return (
+                    <BorderCountryButton
+                      key={borderCountry}
+                      borderCountry={borderCountry}
+                    />
+                  );
+                })} */}
+              </Styles.BorderCountriesCard>
+            </div>
+          ) : (
+            ""
+          )}
+        </Styles.CountryInfoCard>
+      </Styles.CountryDetails>
     </Styles.DetailsCard>
   );
 }

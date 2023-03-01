@@ -19,11 +19,19 @@ export const Header = styled.header`
   @media (min-width: 768px) {
     padding: 2.5rem 6rem;
   }
+
+  @media (min-width: 1024px) {
+    padding: 2.5rem 7rem;
+  }
 `;
 export const Title = styled.h1`
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.4rem;
   color: ${(props) => props.theme.text};
+
+  @media (min-width: 1024px) {
+    font-size: 2rem;
+  }
 `;
 export const Button = styled.button`
   display: flex;
