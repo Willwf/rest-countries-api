@@ -34,6 +34,9 @@ export function DetailsCard() {
     navigate("/");
   }
 
+  console.log(data);
+  console.log(data[0].name.nativeName);
+
   return (
     <Styles.DetailsCard>
       <Styles.BackButton onClick={handleClick}>
@@ -63,11 +66,11 @@ export function DetailsCard() {
           <div>
             <Styles.Info>
               <span>Native Name: </span>
-              {
-                Object.keys(data[0].name.nativeName).map((name) => {
-                  return data[0].name.nativeName[name].common;
-                })[0]
-              }
+              {data[0].name.nativeName
+                ? Object.keys(data[0].name.nativeName).map((name) => {
+                    return data[0].name.nativeName[name].common;
+                  })[0]
+                : ""}
             </Styles.Info>
             <Styles.Info>
               <span>Population: </span>
@@ -93,19 +96,23 @@ export function DetailsCard() {
             </Styles.Info>
             <Styles.Info>
               <span>Currencies: </span>
-              {Object.keys(data[0].currencies)
-                .map((currency) => {
-                  return data[0].currencies[currency].name;
-                })
-                .join(", ")}
+              {data[0].currencies
+                ? Object.keys(data[0].currencies)
+                    .map((currency) => {
+                      return data[0].currencies[currency].name;
+                    })
+                    .join(", ")
+                : ""}
             </Styles.Info>
             <Styles.Info>
               <span>Languages: </span>
-              {Object.keys(data[0].languages)
-                .map((language) => {
-                  return data[0].languages[language];
-                })
-                .join(", ")}
+              {data[0].languages
+                ? Object.keys(data[0].languages)
+                    .map((language) => {
+                      return data[0].languages[language];
+                    })
+                    .join(", ")
+                : ""}
             </Styles.Info>
           </div>
 
