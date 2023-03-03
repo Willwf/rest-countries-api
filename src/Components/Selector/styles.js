@@ -33,6 +33,10 @@ export const Selector = styled.div`
   svg {
     width: 1rem;
   }
+
+  @media (min-width: 1024px) {
+    width: 8vw;
+  }
 `;
 
 export const Title = styled.p`
@@ -61,6 +65,10 @@ export const OptionMenu = styled.div`
 
   &.hidden {
     display: none;
+  }
+
+  @media (min-width: 1024px) {
+    width: 8vw;
   }
 `;
 

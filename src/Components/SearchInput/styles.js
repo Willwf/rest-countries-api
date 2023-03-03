@@ -12,6 +12,10 @@ export const SearchInputBox = styled.div`
   background-color: ${(props) => props.theme.element};
 
   box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 10%);
+
+  @media (min-width: 1024px) {
+    max-width: 30%;
+  }
 `;
 export const SearchIcon = styled.div`
   display: flex;

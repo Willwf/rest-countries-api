@@ -11,7 +11,7 @@ export function CountryCard({ countryData }) {
 
   return (
     <Styles.CountryCard id={countryData.cca3} onClick={handleClick}>
-      <Styles.FlagImg src={countryData.flags.svg} alt={countryData.flags.alt} />
+      <Styles.FlagImg src={countryData.flags.png} alt={countryData.flags.alt} />
       <Styles.Info>
         <Styles.Title>{countryData.name.common}</Styles.Title>
         <Styles.InfoData>

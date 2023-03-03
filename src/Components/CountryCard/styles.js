@@ -7,15 +7,28 @@ export const CountryCard = styled.div`
   box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 10%);
 
   background-color: ${(props) => props.theme.element};
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media (min-width: 1024px) {
+    width: 20%;
+  }
 `;
 
 export const FlagImg = styled.img`
   width: 100%;
   border-radius: 0.5rem 0.5rem 0 0;
+
+  @media (min-width: 1024px) {
+    object-fit: fill;
+    height: 20rem;
+  }
 `;
 
 export const Info = styled.div`
-  margin: 10% 10% 15% 10%;
+  padding: 10% 10% 15% 10%;
 `;
 
 export const Title = styled.h1`

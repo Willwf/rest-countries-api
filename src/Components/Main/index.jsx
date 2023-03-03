@@ -59,9 +59,13 @@ export function Main() {
         />
       </Styles.SearchElements>
 
-      {data.map((countryData) => {
-        return <CountryCard key={countryData.cca3} countryData={countryData} />;
-      })}
+      <Styles.CountriesDiv>
+        {data.map((countryData) => {
+          return (
+            <CountryCard key={countryData.cca3} countryData={countryData} />
+          );
+        })}
+      </Styles.CountriesDiv>
     </Styles.Main>
   );
 }

@@ -102,6 +102,7 @@ export const CountryInfoCard = styled.div`
 
     & div:nth-child(4) {
       display: flex;
+      align-items: center;
     }
   }
 `;
@@ -150,6 +151,8 @@ export const BorderCountriesCard = styled.div`
   gap: 2vh;
 
   @media (min-width: 1024px) {
+    // justify-content: center;
+
     margin: 0;
 
     width: 100%;
