@@ -63,11 +63,13 @@ export function DetailsCard() {
           <div>
             <Styles.Info>
               <span>Native Name: </span>
-              {data[0].name.nativeName
-                ? Object.keys(data[0].name.nativeName).map((name) => {
-                    return data[0].name.nativeName[name].common;
-                  })[0]
-                : ""}
+              {data[0].name.nativeName ? (
+                Object.keys(data[0].name.nativeName).map((name) => {
+                  return data[0].name.nativeName[name].common;
+                })[0]
+              ) : (
+                <span style={{ fontStyle: "italic" }}>Not Available</span>
+              )}
             </Styles.Info>
             <Styles.Info>
               <span>Population: </span>
@@ -93,23 +95,27 @@ export function DetailsCard() {
             </Styles.Info>
             <Styles.Info>
               <span>Currencies: </span>
-              {data[0].currencies
-                ? Object.keys(data[0].currencies)
-                    .map((currency) => {
-                      return data[0].currencies[currency].name;
-                    })
-                    .join(", ")
-                : ""}
+              {data[0].currencies ? (
+                Object.keys(data[0].currencies)
+                  .map((currency) => {
+                    return data[0].currencies[currency].name;
+                  })
+                  .join(", ")
+              ) : (
+                <span style={{ fontStyle: "italic" }}>Not Available</span>
+              )}
             </Styles.Info>
             <Styles.Info>
               <span>Languages: </span>
-              {data[0].languages
-                ? Object.keys(data[0].languages)
-                    .map((language) => {
-                      return data[0].languages[language];
-                    })
-                    .join(", ")
-                : ""}
+              {data[0].languages ? (
+                Object.keys(data[0].languages)
+                  .map((language) => {
+                    return data[0].languages[language];
+                  })
+                  .join(", ")
+              ) : (
+                <span style={{ fontStyle: "italic" }}>Not Available</span>
+              )}
             </Styles.Info>
           </div>
 
@@ -123,14 +129,6 @@ export function DetailsCard() {
                   borderCountries={data[0].borders}
                   setCountryIdState={setCountryIdState}
                 />
-                {/* {data[0].borders.map((borderCountry) => {
-                  return (
-                    <BorderCountryButton
-                      key={borderCountry}
-                      borderCountry={borderCountry}
-                    />
-                  );
-                })} */}
               </Styles.BorderCountriesCard>
             </div>
           ) : (
