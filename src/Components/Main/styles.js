@@ -53,7 +53,17 @@ export const CountriesDiv = styled.div`
 
   @media (min-width: 1024px) {
     flex-direction: row;
+    align-items: flex-start;
 
     flex-wrap: wrap;
+
+    width: 100%;
+    min-height: 80vh;
   }
+`;
+
+export const NotFoundElement = styled.p`
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 7rem;
+  color: ${(props) => props.theme.text};
 `;

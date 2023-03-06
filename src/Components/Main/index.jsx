@@ -46,6 +46,8 @@ export function Main() {
     return <div>Error: {error.message}</div>;
   }
 
+  console.log(data);
+
   return (
     <Styles.Main>
       <Styles.SearchElements>
@@ -60,11 +62,15 @@ export function Main() {
       </Styles.SearchElements>
 
       <Styles.CountriesDiv>
-        {data.map((countryData) => {
-          return (
-            <CountryCard key={countryData.cca3} countryData={countryData} />
-          );
-        })}
+        {data.status === 404 ? (
+          <Styles.NotFoundElement>{data.message}</Styles.NotFoundElement>
+        ) : (
+          data.map((countryData) => {
+            return (
+              <CountryCard key={countryData.cca3} countryData={countryData} />
+            );
+          })
+        )}
       </Styles.CountriesDiv>
     </Styles.Main>
   );

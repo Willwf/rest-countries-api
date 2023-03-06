@@ -34,9 +34,6 @@ export function DetailsCard() {
     navigate("/");
   }
 
-  console.log(data);
-  console.log(data[0].name.nativeName);
-
   return (
     <Styles.DetailsCard>
       <Styles.BackButton onClick={handleClick}>
