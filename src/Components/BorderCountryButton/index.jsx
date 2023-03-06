@@ -7,12 +7,15 @@ import * as Styles from "./styles";
 export function BorderCountryButton({ borderCountries, setCountryIdState }) {
   const navigate = useNavigate();
 
-  const { data, isLoading, error } = useQuery("borderCountryData", async () => {
-    const response = await fetch(
-      `https://restcountries.com/v3.1/alpha?codes=${borderCountries}`
-    );
-    return response.json();
-  });
+  const { data, isLoading, error } = useQuery(
+    ["borderCountryData", borderCountries],
+    async () => {
+      const response = await fetch(
+        `https://restcountries.com/v3.1/alpha?codes=${borderCountries}`
+      );
+      return response.json();
+    }
+  );
 
   if (isLoading) {
     return <LoadingElement />;

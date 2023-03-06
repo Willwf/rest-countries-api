@@ -10,10 +10,8 @@ export const LoadingElement = styled.div`
 `;
 export const LoadingText = styled.p`
   font-family: "Nunito Sans", sans-serif;
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: bold;
-
-  margin-top: 30vh;
 
   // color: ${(props) => props.theme.text};
 `;

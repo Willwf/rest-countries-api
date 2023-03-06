@@ -46,8 +46,6 @@ export function Main() {
     return <div>Error: {error.message}</div>;
   }
 
-  console.log(data);
-
   return (
     <Styles.Main>
       <Styles.SearchElements>
